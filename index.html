@@ -7,7 +7,47 @@
     <title>DuTi</title>
 </head>
 <body>
-    <h1>Hello Peoplee</h1>
-    <h2>weweweweewewews</h2>
+    <h1>QUIZ </h1>
+    <P>Kur eshte pavarsia e shqiperise</P>
+    <input type="radio" name="question1" value="1">1910
+    <input type="radio" name="question1" value="2">1920
+    <input type="radio" name="question1" value="3">1912
+    <br><br>
+    <P>si eshte emri i verter i YEPMk</P>
+    <input type="radio" name="question2" value="1">Youth Empowerment Platform
+    <input type="radio" name="question2" value="2">Your Entertaiment Platform
+    <input type="radio" name="question2" value="3">Youth East Platformn
+    <br><br>
+ 
+    <button type="button" onclick="tfunction()">Results</button>
+    <div id="results"></div>
+    <script>
+        
+        function tfunction()
+        {
+            var truequestion = 0; // pergjigjet fillestare te sakta
+            var falsequestion = 0; // pergjigjet fillestare te gabuara
+            let fquestion = document.querySelector('input[name="question1"]:checked').value; //marja e vleres per pyetjen e pare
+            var lquestion = document.querySelector('input[name="question2"]:checked').value; // marja e vleres per pyetjen e dyte
+            if(fquestion == "3") // kontrollimi i pergjigjes ne qoftese eshte e sakte
+            {
+                truequestion++; // nese pergjigja e pare eshte e sakte
+            }
+            else 
+            {
+                falsequestion++; // nese pergjigja e pare eshte e gabuar
+            }
+            if (lquestion == "1") // kontrollimi i pergjigjes se dyte 
+            {
+                truequestion++;   // nese pergjigja e dyte eshte esakte
+            }
+            else
+            {
+                falsequestion++; // nese pergjigja e dyte eshte e gabuar
+            }
+            // printimi i rezultatit 
+            document.getElementById("results").innerHTML = "Correct answers :"  + truequestion + " Incorrect answers:  "+ falsequestion;
+        }
+    </script>
 </body>
 </html>
